@@ -1,5 +1,7 @@
 ### A daemon process
 
+Following [4 Steps for Daemonizie Go Application](https://ieftimov.com/posts/four-steps-daemonize-your-golang-programs)
+
 ```bash
 go run main.go run.go
 
