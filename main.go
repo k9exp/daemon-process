@@ -36,7 +36,6 @@ func (c *Config) Update() error {
 
 	c.interval = d
 	c.name = viper.GetString("name")
-	c.counter = atomic.Int64{}
 
 	return nil
 }
@@ -51,6 +50,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	config.counter.Store(0)
 
 	signalChan := make(chan os.Signal, 1)
 	signal.Notify(signalChan, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
