@@ -1,0 +1,12 @@
+#[Unit] defined the metadata about the resource
+[Unit]
+Description=The Sample Daemon Process, prints the name with interval
+Documentation=https://github.com/k9exp/daemon-process#a-daemon-process
+#After=network-online.target
+# delay or tigger services that require a fully funcational
+# network connection
+
+[Service]
+ExecStart=/usr/local/bin/uv
+Restart=always
+RestartSec=5
